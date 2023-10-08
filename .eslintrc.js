@@ -1,31 +1,37 @@
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-	},
-	extends: "google",
-	overrides: [
-		{
-			env: {
-				node: true,
-			},
-			files: [".eslintrc.{js,cjs}"],
-			parserOptions: {
-				sourceType: "script",
-			},
-		},
-	],
-	parserOptions: {
-		ecmaVersion: "latest",
-		sourceType: "module",
-	},
-	rules: {},
-	quotes: [
-		"error",
-		"single",
-		{
-			avoidEscape: true,
-			allowTemplateLiterals: true,
-		},
-	],
+    env: {
+        browser: true,
+        es2021: true
+    },
+    extends: 'google',
+    overrides: [
+        {
+            env: {
+                node: true
+            },
+            files: ['.eslintrc.{js,cjs}'],
+            parserOptions: {
+                sourceType: 'script'
+            }
+        }
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+    },
+    rules: {
+        'import/no-extraneous-dependencies': 0,
+        'no-console': 0,
+        'no-underscore-dangle': 0,
+        'no-restricted-globals': 0,
+        'linebreak-style': 0
+    },
+    quotes: [
+        'error',
+        'single',
+        {
+            avoidEscape: true,
+            allowTemplateLiterals: true
+        }
+    ]
 };

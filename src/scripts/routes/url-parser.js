@@ -33,6 +33,7 @@ const UrlParser = {
         };
     },
 
+    // Kombinasi hash url
     _urlCombiner(splitedUrl) {
         return (
             (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +

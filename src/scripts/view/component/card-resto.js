@@ -1,44 +1,57 @@
+import CONFIG from '../../global/config';
+
 class cardResto extends HTMLElement {
-	set cardData(data) {
-		this._cardData = data;
-		this.render();
-	}
+    set cardData(data) {
+        this._cardData = data;
+        this.render();
+    }
 
-	render() {
-		const rating = this._cardData.rating;
-		const bgColorRating = rating < 4 ? "bg-red" : "bg-blue";
-		const colorTextReview = rating < 4 ? "text-red" : "text-blue";
-		const textReview = rating < 4 ? "Not Good" : "Very Good";
+    cutParagraf(paragraf) {
+        // Memecah paragraf menjadi array kata-kata
+        const kataKata = paragraf.split(' ');
 
-		this.innerHTML = `
-					<article class="card-resto-populer">
-						<div class="card-resto-populer__img">
+        // Mengambil 8 kata pertama dari array kata-kata
+        const delapanKata = kataKata.slice(0, 8).join(' ');
+
+        return delapanKata;
+    }
+
+    render() {
+        const rating = this._cardData.rating;
+        const bgColorRating = rating < 4 ? 'bg-red' : 'bg-blue';
+        const colorTextReview = rating < 4 ? 'text-red' : 'text-blue';
+        const textReview = rating < 4 ? 'Not Good' : 'Very Good';
+        const desc = this.cutParagraf(this._cardData.description);
+
+        this.innerHTML = `
+					<article class="card-info-resto">
+						<div class="card-info-resto__img">
 							<img
-								src="${this._cardData.pictureId}"
+								src="${CONFIG.BASE_IMAGE_URL}${this._cardData.pictureId}"
 								alt="Foto Resto ${this._cardData.name}"
 							/>
 						</div>
-						<div class="card-resto-populer__bottom">
-							<a href="#" class="card-resto-populer__navigasi" title="Menuju halaman resto ${this._cardData.name}">
-								<div class="card-resto-populer__rating-info flex-row">
+						<div class="card-info-resto__bottom">
+							<a href="/#/detail/${this._cardData.id}" class="card-info-resto__navigasi" title="Menuju halaman resto ${this._cardData.name}">
+								<div class="card-info-resto__rating-info flex-row">
 									<span class="rating-resto-angka text-white ${bgColorRating}">${rating}</span>
 									<p class="rating-resto-word ${colorTextReview}">${textReview}</p>
 									<p class="review-resto text-navy">10k Review</p>
 								</div>
-								<div class="card-resto-populer__profile-resto">
+								<div class="card-info-resto__profile-resto">
 									<h3 class="text-navy text-2xl">${this._cardData.name}</h3>
 									<h4 class="text-navy text-lg">${this._cardData.type} Resto'</h4>
 									<p class="text-navy">${this._cardData.city}</p>
 									<hr />
 								</div>
-								<p class="card-resto-populer__description text-navy">
-									${this._cardData.description}
+								<p class="card-info-resto__description text-navy">
+									${desc}
 								</p>
 							</a>
 						</div>
 					</article>
-		`;
-	}
+								`;
+    }
 }
 
-customElements.define("card-resto", cardResto);
+customElements.define('card-resto', cardResto);

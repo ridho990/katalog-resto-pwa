@@ -59,4 +59,4 @@ class GaleriResto extends HTMLElement {
     }
 }
 
-customElements.define('home-hero', GaleriResto);
+customElements.define('galeri-resto', GaleriResto);

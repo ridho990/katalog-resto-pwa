@@ -18,8 +18,10 @@ class RestoPopuler extends HTMLElement {
                         Nikmati pengalaman kuliner terbaik dengan
                         restoran-restoran yang sangat direkomendasikan
                     </p>
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                 </div>
-                <div class="resto-populer__wrapper-card"></div>
+                <div class="resto-populer__wrapper-card">
+                </div>
                 <button
                     class="resto-populer__btn-view bg-navy text-white"
                     title="Klik untuk dapat melihat semua"

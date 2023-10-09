@@ -17,8 +17,7 @@ const DetailResto = {
         const resto = await RestoApiSource.detailResto(url.id);
         const detailResto = document.createElement('detail-resto');
         const mainContent = document.querySelector('#mainContent');
-        console.log(detailResto);
-        console.log(resto);
+
         detailResto.setDetailResto = resto;
         mainContent.appendChild(detailResto);
     }

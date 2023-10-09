@@ -554,6 +554,7 @@ loader-ring {
     outline-offset: -2px;
 
     & p.card-info-resto__description {
+        opacity: 0.8;
         line-height: 1.6rem;
     }
 }
@@ -585,6 +586,10 @@ loader-ring {
 
 .card-info-resto__profile-resto {
     & h4 {
+        font-weight: 500;
+    }
+
+    & > p {
         font-weight: 500;
     }
 

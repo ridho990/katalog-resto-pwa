@@ -8,14 +8,15 @@ class cardResto extends HTMLElement {
 
     cutParagraf(paragraf) {
         // Memecah paragraf menjadi array kata-kata
-        const kataKata = paragraf.split(' ');
+        const words = paragraf.split(' ');
 
         // Mengambil 8 kata pertama dari array kata-kata
-        const delapanKata = kataKata.slice(0, 8).join(' ');
+        const sentenceResult = words.slice(0, 8).join(' ');
 
-        return delapanKata;
+        return sentenceResult;
     }
 
+    // Generate type resto
     typeRestoGenerator() {
         const type = ['Javanese', 'Nusantara', 'Western', 'Chinese'];
         const indexNumber = Math.floor(Math.random() * 4);
@@ -47,7 +48,6 @@ class cardResto extends HTMLElement {
 								</div>
 								<div class="card-info-resto__profile-resto">
 									<h3 class="text-navy text-2xl">${this._cardData.name}</h3>
-									<h4 class="text-navy text-lg">${typeResto} Resto'</h4>
 									<p class="text-navy">${this._cardData.city}</p>
 									<hr />
 								</div>

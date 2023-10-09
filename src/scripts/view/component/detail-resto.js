@@ -1,110 +1,103 @@
-class DetailResto extends HTMLElement {
-    // connectedCallback() {
-    //     this.render();
-    // }
+import CONFIG from '../../global/config';
 
+class DetailResto extends HTMLElement {
     set setDetailResto(dataResto) {
         this._dataResto = dataResto;
         this.render();
+        // this.makeReview(this._dataResto.customerReviews);
+    }
+
+    makeListMenu(menu) {
+        let result = '';
+        menu.forEach((item) => {
+            result += `${item.name}, `;
+        });
+        return result.replace(/,(?=\s*$)/, '');
     }
 
     render() {
+        const image = CONFIG.BASE_IMAGE_URL + this._dataResto.pictureId;
+        const name = this._dataResto.name;
+        const rating = this._dataResto.rating;
+        const bgColorRating = rating < 4 ? 'bg-red' : 'bg-blue';
+        const colorTextReview = rating < 4 ? 'text-red' : 'text-blue';
+        const textReview = rating < 4 ? 'Not Good' : 'Very Good';
+
+        const categories = `${this._dataResto.categories[0].name} Food dan ${this._dataResto.categories[1].name} Food`;
+        const address = `${this._dataResto.address}, ${this._dataResto.city}`;
+        const drinkMenu = this.makeListMenu(this._dataResto.menus.drinks);
+        const foodMenu = this.makeListMenu(this._dataResto.menus.foods);
+        const review = this._dataResto.customerReviews;
+
         this.innerHTML = `
             <section class="section-detail-resto padding-x-content">
 				<div class="detail-resto">
 					<div class="detail-resto__img">
-						<img src="./images/heros/hero-image_4.jpg" alt="Foto resto" />
+						<img src="${image}" alt="Foto resto ${name}" />
 					</div>
 					<div class="detail-resto__info-wrapper">
 						<div class="info-wrapper__navigasi flex-row text-navy">
-							<a href="./index.html" class="text-navy">Home</a>
+							<a href="./index.html" class="text-navy" title="Dari page ${name} menuju home">Home</a>
 							<span class="">/</span>
-							<p class="">${this._dataResto.name}</p>
+							<p class="">${name}</p>
 						</div>
 						<div class="info-wrapper__rating-info flex-row">
-							<span class="rating-info-angka text-white bg-blue">4.2</span>
-							<p class="rating-info-word text-blue">Very Good</p>
+							<span class="rating-info-angka text-white ${bgColorRating}">${rating}</span>
+							<p class="rating-info-word ${colorTextReview}">${textReview}</p>
 							<p class="review-resto text-navy">10k Review</p>
 						</div>
 						<div class="info-wrapper__profile-resto">
-							<h1 class="text-navy text-2xl">Phone Cafe</h1>
-							<h2 class="text-navy text-lg">Western Resto'</h2>
-							<p class="text-navy">Bali</p>
+							<h1 class="text-navy text-2xl">${name}</h1>
+							<h2 class="text-navy text-lg">${categories}</h2>
+							<p class="text-navy">${address}</p>
 							<hr />
 						</div>
 						<div class="info-wrapper__desc-n-menu text-navy">
 							<p class="desc-n-menu__paragraph">
-								Menyajikan berbagai hidangan lezat untuk dinikmati
+								${this._dataResto.description}
 							</p>
 							<div class="desc-n-menu__drink text-navy">
 								<h2 class="text-lg">Daftar Minuman</h2>
-								<p>
-									Air Mineral, Kopi Hitam, Teh Hijau, Jus Jeruk, Susu Cokelat,
-									Es Teh Manis, Soda Jeruk, Teh Tarik, Cappuccino, Es Kopi Susu
-								</p>
+								<p>${drinkMenu}</p>
 							</div>
 							<div class="desc-n-menu__food text-navy">
 								<h2 class="text-lg">Daftar Makanan</h2>
-								<p>
-									Nasi Goreng, Mie Goreng, Ayam Goreng, Sushi, Pizza, Bubur
-									Ayam, Nasi Padang, Sate Ayam, Lasagna, Bakso.
-								</p>
+								<p>${foodMenu}</p>
 							</div>
 							<hr />
 						</div>
 						<div class="info-wrapper__ulasan-pengguna text-navy">
 							<h2 class="text-lg">Ulasan</h2>
 							<div class="ulasan-pengguna__wrapper-ulasan-form">
-								<article class="ulasan-pengguna__wrapper-ulasan">
-									<div class="wrapper-ulasan__name-star-date flex-col">
-										<span class="name-star flex-row">
-											<h3 class="username-reviewer">Ridho Ahmad Fauzi</h3>
-											<span class="stars text-yellow">
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</span>
-										</span>
-										<span class="name-star-date__date flex-row">
-											<p class="strip">-</p>
-											<p class="date-ulasan">14 Agustus 2023</p>
-										</span>
-									</div>
-									<div class="wrapper-ulasan__user-review text-navy">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit.
-											Omnis consequatur ducimus quia libero nostrum excepturi
-											dolorem eveniet architecto eos praesentium.
-										</p>
-									</div>
-								</article>
-								<article class="ulasan-pengguna__wrapper-ulasan">
-									<div class="wrapper-ulasan__name-star-date flex-col">
-										<span class="name-star flex-row">
-											<h3 class="username-reviewer">Ridho Ahmad Fauzi</h3>
-											<span class="stars text-yellow">
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-solid fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</span>
-										</span>
-										<span class="name-star-date__date flex-row">
-											<p class="strip">-</p>
-											<p class="date-ulasan">14 Agustus 2023</p>
-										</span>
-									</div>
-									<div class="wrapper-ulasan__user-review text-navy">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit.
-											Omnis consequatur ducimus quia libero nostrum excepturi
-											dolorem eveniet architecto eos praesentium.
-										</p>
-									</div>
-								</article>
+                                ${review
+                                    .map(
+                                        (itemReview) => `
+                                        <article class="ulasan-pengguna__wrapper-ulasan">
+                                            <div class="wrapper-ulasan__name-star-date flex-col">
+                                                <span class="name-star flex-row">
+                                                    <h3 class="username-reviewer">${itemReview.name}</h3>
+                                                    <span class="stars text-yellow">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="name-star-date__date flex-row">
+                                                    <p class="strip">-</p>
+                                                    <p class="date-ulasan">${itemReview.date}</p>
+                                                </span>
+                                            </div>
+                                            <div class="wrapper-ulasan__user-review text-navy">
+                                                <p>
+                                                    ${itemReview.review}
+                                                </p>
+                                            </div>
+                                        </article>
+                                `
+                                    )
+                                    .join('')}
 							</div>
 							<div class="ulasan-pengguna__wrapper-form">
 								<form class="form-ulasan-user flex-col" action="#">
@@ -141,3 +134,11 @@ class DetailResto extends HTMLElement {
 }
 
 customElements.define('detail-resto', DetailResto);
+
+/**
+ * Note For ME
+ * Pada dasarnya, ketika Anda menggunakan .map() pada array dan mengembalikan tag HTML dalam
+ * fungsi callback, itu menghasilkan array dari elemen-elemen HTML. Menggunakan .join('') setelah
+ * map() menggabungkan array elemen HTML tersebut ke dalam satu string, tetapi elemen-elemen dalam
+ * array tetap berupa elemen HTML, bukan string biasa. Itulah alasannya kenapa hasil tidak dianggap sebagai string
+ */

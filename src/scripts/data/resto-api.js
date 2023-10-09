@@ -2,13 +2,18 @@ import API_ENDPOINT from '../global/api-endpoint';
 
 class RestoApiSource {
     static showLoader() {
-        const ldRing = document.querySelector('.lds-ring');
-        ldRing.style.display = 'inline-block';
+        const ldRing = document.querySelectorAll('.lds-ring');
+        console.log(ldRing);
+        ldRing.forEach((item) => {
+            item.style.display = 'inline-block';
+        });
     }
 
     static hideLoader() {
-        const ldRing = document.querySelector('.lds-ring');
-        ldRing.style.display = 'none';
+        const ldRing = document.querySelectorAll('.lds-ring');
+        ldRing.forEach((item) => {
+            item.style.display = 'none';
+        });
     }
 
     // static async listResto() {

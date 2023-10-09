@@ -16,12 +16,19 @@ class cardResto extends HTMLElement {
         return delapanKata;
     }
 
+    typeRestoGenerator() {
+        const type = ['Javanese', 'Nusantara', 'Western', 'Chinese'];
+        const indexNumber = Math.floor(Math.random() * 4);
+        return type[indexNumber];
+    }
+
     render() {
         const rating = this._cardData.rating;
         const bgColorRating = rating < 4 ? 'bg-red' : 'bg-blue';
         const colorTextReview = rating < 4 ? 'text-red' : 'text-blue';
         const textReview = rating < 4 ? 'Not Good' : 'Very Good';
         const desc = this.cutParagraf(this._cardData.description);
+        const typeResto = this.typeRestoGenerator();
 
         this.innerHTML = `
 					<article class="card-info-resto">
@@ -40,7 +47,7 @@ class cardResto extends HTMLElement {
 								</div>
 								<div class="card-info-resto__profile-resto">
 									<h3 class="text-navy text-2xl">${this._cardData.name}</h3>
-									<h4 class="text-navy text-lg">${this._cardData.type} Resto'</h4>
+									<h4 class="text-navy text-lg">${typeResto} Resto'</h4>
 									<p class="text-navy">${this._cardData.city}</p>
 									<hr />
 								</div>

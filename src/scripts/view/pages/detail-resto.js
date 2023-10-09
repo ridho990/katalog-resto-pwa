@@ -1,19 +1,26 @@
+import '../component/detail-hero';
+import '../component/loader-ring';
+import '../component/detail-resto';
 import UrlParser from '../../routes/url-parser';
 import RestoApiSource from '../../data/resto-api';
 
 const DetailResto = {
     async render() {
         return `
-      <h2>Now Playing Page</h2>
-      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <detail-hero></detail-hero>
+        <loader-ring></loader-ring>
     `;
     },
 
     async afterRender() {
         const url = UrlParser.parseActiveUrlWithoutCombiner();
-        console.log(url);
         const resto = await RestoApiSource.detailResto(url.id);
+        const detailResto = document.createElement('detail-resto');
+        const mainContent = document.querySelector('#mainContent');
+        console.log(detailResto);
         console.log(resto);
+        detailResto.setDetailResto = resto;
+        mainContent.appendChild(detailResto);
     }
 };
 

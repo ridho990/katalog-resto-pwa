@@ -7,6 +7,8 @@ import '../component/galeri-resto';
 import '../component/home-ulasan';
 import '../component/card-resto';
 import RestoApiSource from '../../data/resto-api';
+import BtnViewInitiator from '../../utils/btnview-initiator';
+import GaleriInitiator from '../../utils/galeri-initiator';
 
 const Home = {
     async render() {
@@ -27,11 +29,32 @@ const Home = {
             const wrapperCard = document.querySelector(
                 '.resto-populer__wrapper-card'
             );
+            const galeriImg = document.querySelectorAll('.galeri-resto__img');
+            const overlayTitle = document.querySelectorAll(
+                '.overlay-img__nama-resto'
+            );
+            const earlyTotalList = 3;
 
-            listResto.splice(0, 3).forEach((resto) => {
-                const cardResto = document.createElement('card-resto');
-                cardResto.cardData = resto;
-                wrapperCard.appendChild(cardResto);
+            for (const index in listResto) {
+                if (index < earlyTotalList) {
+                    const cardResto = document.createElement('card-resto');
+                    cardResto.cardData = listResto[index];
+                    wrapperCard.appendChild(cardResto);
+                }
+            }
+
+            BtnViewInitiator.init({
+                btnViewAll: document.querySelector('.resto-populer__btn-view'),
+                wrapperCard: document.querySelector(
+                    '.resto-populer__wrapper-card'
+                ),
+                dataList: listResto
+            });
+
+            GaleriInitiator.init({
+                galeriImg: galeriImg,
+                overlayTitle: overlayTitle,
+                dataResto: listResto
             });
         } catch (error) {
             alert(error);

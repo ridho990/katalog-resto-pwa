@@ -1,7 +1,11 @@
+import '../component/favorite-hero';
+import '../component/favorite-wrapper';
+
 const Favorite = {
     async render() {
         return `
-      <h2>Now Playing Page</h2>
+        <favorite-hero></favorite-hero>
+        <favorite-wrapper></favorite-wrapper>
     `;
     },
 

@@ -19,36 +19,42 @@ class GaleriResto extends HTMLElement {
                     <div class="galeri-resto__wrapper-galeri">
                         <div class="galeri-resto__wrapper-img galeri-1">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>
                         </div>
                         <div class="galeri-resto__wrapper-img galeri-2">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>
                         </div>
                         <div class="galeri-resto__wrapper-img galeri-3">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>
                         </div>
                         <div class="galeri-resto__wrapper-img galeri-4">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>
                         </div>
                         <div class="galeri-resto__wrapper-img galeri-5">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>
                         </div>
                         <div class="galeri-resto__wrapper-img galeri-6">
                             <img class="galeri-resto__img" />
+                            <loader-ring></loader-ring>
                             <div class="overlay-img">
                                 <h3 class="overlay-img__nama-resto text-white"></h3>
                             </div>

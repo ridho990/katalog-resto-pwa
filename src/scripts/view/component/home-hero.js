@@ -51,7 +51,7 @@ class HomeHero extends HTMLElement {
                     <a
                         href="#resto-populer"
                         class="hero__nav text-white"
-                        title="Navigasi ke section konten utama (rekomendasi resto)"
+                        aria-label="Navigasi ke section konten utama (rekomendasi resto)"
                         >Lihat Semua Restoran
                         <i class="fa-solid fa-arrow-right-long"></i
                     ></a>

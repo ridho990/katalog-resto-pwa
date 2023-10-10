@@ -1,7 +1,7 @@
 import CONFIG from '../global/config';
 
 const GaleriInitiator = {
-    init({ galeriImg, overlayTitle, dataResto }) {
+    async init({ galeriImg, overlayTitle, dataResto }) {
         for (const index in dataResto) {
             if (index < 6) {
                 galeriImg[

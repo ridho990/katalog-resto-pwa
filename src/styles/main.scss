@@ -1024,6 +1024,30 @@ loader-ring {
     }
 }
 
+/*
+  Like
+*/
+.like {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #df6951;
+
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50%;
+    border: 1px solid #dfdfdf;
+
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+
+    z-index: 10;
+}
+
 // ini bagian footer
 .footer {
     padding-top: 4rem;

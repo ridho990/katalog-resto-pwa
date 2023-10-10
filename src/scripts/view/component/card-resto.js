@@ -40,15 +40,18 @@ class cardResto extends HTMLElement {
 							/>
 						</div>
 						<div class="card-info-resto__bottom">
-							<a href="/#/detail/${this._cardData.id}" class="card-info-resto__navigasi" title="Menuju halaman resto ${this._cardData.name}">
+							<a  href="/#/detail/${this._cardData.id}" 
+                                class="card-info-resto__navigasi"
+                                title="Menuju halaman resto ${this._cardData.name}" 
+                                aria-label="Menuju ke detail resto ${this._cardData.name}">
 								<div class="card-info-resto__rating-info flex-row">
 									<span class="rating-resto-angka text-white ${bgColorRating}">${rating}</span>
 									<p class="rating-resto-word ${colorTextReview}">${textReview}</p>
 									<p class="review-resto text-navy">10k Review</p>
 								</div>
 								<div class="card-info-resto__profile-resto">
-									<h3 class="text-navy text-2xl">${this._cardData.name}</h3>
-									<p class="text-navy">${this._cardData.city}</p>
+									<h3 class="text-navy profile-resto__name-resto text-2xl">${this._cardData.name}</h3>
+									<p class="text-navy profile-resto__city-resto">${this._cardData.city}</p>
 									<hr />
 								</div>
 								<p class="card-info-resto__description text-navy">

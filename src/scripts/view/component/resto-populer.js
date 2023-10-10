@@ -24,7 +24,7 @@ class RestoPopuler extends HTMLElement {
                 </div>
                 <button
                     class="resto-populer__btn-view bg-navy text-white"
-                    title="Klik untuk dapat melihat semua"
+                    aria-label="Klik untuk dapat melihat semua"
                 >
                     Lihat Semua
                 </button>

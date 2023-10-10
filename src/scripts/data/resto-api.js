@@ -82,7 +82,8 @@ class RestoApiSource {
             body: JSON.stringify(data)
         };
         const response = await fetch(API_ENDPOINT.ADD_REVIEW, options);
-        return response.json();
+        const newListReview = await response.json();
+        return newListReview.customerReviews;
     }
 }
 

@@ -29,17 +29,3 @@ const searchBarFavorite = {
 };
 
 export default searchBarFavorite;
-
-// searchInput.addEventListener('input', (e) => {
-//     const containerBuku = document.querySelectorAll('.card-book');
-//     const judulBuku = document.querySelectorAll('.card-title');
-//     const penulis = document.querySelectorAll('.card-author');
-//     const value = e.target.value.toLowerCase();
-
-//     for (let i = 0; i < containerBuku.length; i++) {
-//         let isVisible =
-//             judulBuku[i].innerText.toLowerCase().includes(value) ||
-//             penulis[i].innerText.toLowerCase().includes(value);
-//         containerBuku[i].classList.toggle('hidden', !isVisible);
-//     }
-// });

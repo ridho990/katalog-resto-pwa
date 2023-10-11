@@ -5,6 +5,7 @@ import UrlParser from '../../routes/url-parser';
 import RestoApiSource from '../../data/resto-api';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import postReview from '../../utils/post-reveiw';
+import DialogueError from '../../utils/dialogue-error';
 
 const DetailResto = {
     async render() {
@@ -43,15 +44,11 @@ const DetailResto = {
                 id: resto.id,
                 btnSubmit: document.getElementById('btn-submit-review')
             });
-
-            DialogueError.init({
-                btnClose: document.getElementById('btn-close-x'),
-                btnYes: document.getElementById('yes-button'),
+        } catch (error) {
+            DialogueError.showDialogueError({
                 overlay: document.querySelector('.overlay-dialogue'),
                 wrapperDialogue: document.querySelector('.card-dialogue-eror')
             });
-        } catch (error) {
-            alert(error);
             console.error('Error:', error);
         }
     }

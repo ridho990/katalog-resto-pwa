@@ -1,4 +1,5 @@
 import API_ENDPOINT from '../global/api-endpoint';
+import DialogueError from '../utils/dialogue-error';
 
 class RestoApiSource {
     static showLoader() {
@@ -28,8 +29,17 @@ class RestoApiSource {
                 const response = await fetch(API_ENDPOINT.LIST_RESTO);
                 const responseJson = await response.json();
                 const listResto = responseJson.restaurants.splice(0, 12);
+                // const listResto = null; // Untuk test eror
 
                 if (!listResto) {
+                    DialogueError.init({
+                        btnClose: document.getElementById('btn-close-x'),
+                        btnYes: document.getElementById('yes-button'),
+                        overlay: document.querySelector('.overlay-dialogue'),
+                        wrapperDialogue: document.querySelector(
+                            '.card-dialogue-eror'
+                        )
+                    });
                     reject(new Error('Gagal mengambil data dari server'));
                 }
 
@@ -51,8 +61,16 @@ class RestoApiSource {
                 const response = await fetch(API_ENDPOINT.DETAIL_RESTO(id));
                 const responseJson = await response.json();
                 const dataResto = responseJson.restaurant;
-
+                // const dataResto = null; // Test data eror
                 if (!dataResto) {
+                    DialogueError.init({
+                        btnClose: document.getElementById('btn-close-x'),
+                        btnYes: document.getElementById('yes-button'),
+                        overlay: document.querySelector('.overlay-dialogue'),
+                        wrapperDialogue: document.querySelector(
+                            '.card-dialogue-eror'
+                        )
+                    });
                     reject(new Error('Gagal mengambil data dari server'));
                 }
 

@@ -57,15 +57,11 @@ const Home = {
                 overlayTitle: overlayTitle,
                 dataResto: listResto
             });
-
-            DialogueError.init({
-                btnClose: document.getElementById('btn-close-x'),
-                btnYes: document.getElementById('yes-button'),
+        } catch (error) {
+            DialogueError.showDialogueError({
                 overlay: document.querySelector('.overlay-dialogue'),
                 wrapperDialogue: document.querySelector('.card-dialogue-eror')
             });
-        } catch (error) {
-            alert(error);
             console.error('Error:', error);
         }
     }

@@ -31,7 +31,7 @@ const restoImageApi = new Route(
 );
 
 registerRoute(restoApi);
-// registerRoute(restoImageApi);
+registerRoute(restoImageApi);
 
 self.addEventListener('install', () => {
     console.log('Service Worker: Installed');

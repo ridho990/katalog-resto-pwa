@@ -1138,3 +1138,75 @@ loader-ring {
         opacity: 1;
     }
 }
+
+/*
+    Card Dialog
+*/
+
+.card-dialogue-eror {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: white;
+    color: rgb(209, 77, 77);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 12;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    & .close-dialogue-eror {
+        position: absolute;
+        padding-left: 1.5rem;
+        top: 0.3rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: #333;
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+
+    & .wrapper-button-dialogue {
+        margin-top: 1rem;
+        justify-content: flex-end;
+
+        & #yes-button {
+            background-color: transparent;
+            padding: 0.75rem 2rem;
+            outline: none;
+            border: 1.5px solid #fb8500;
+            border-radius: 0.4rem;
+            -webkit-border-radius: 0.4rem;
+            -moz-border-radius: 0.4rem;
+            -ms-border-radius: 0.4rem;
+            -o-border-radius: 0.4rem;
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgb(209, 77, 77);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.overlay-dialogue {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 11;
+}

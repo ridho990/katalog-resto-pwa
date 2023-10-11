@@ -16,30 +16,37 @@ const DetailResto = {
     },
 
     async afterRender() {
-        const url = UrlParser.parseActiveUrlWithoutCombiner();
-        const resto = await RestoApiSource.detailResto(url.id);
-        const detailResto = document.createElement('detail-resto');
-        const mainContent = document.querySelector('#mainContent');
+        try {
+            const url = UrlParser.parseActiveUrlWithoutCombiner();
+            const resto = await RestoApiSource.detailResto(url.id);
+            const detailResto = document.createElement('detail-resto');
+            const mainContent = document.querySelector('#mainContent');
 
-        detailResto.setDetailResto = resto;
-        mainContent.appendChild(detailResto);
+            detailResto.setDetailResto = resto;
+            mainContent.appendChild(detailResto);
 
-        LikeButtonInitiator.init({
-            likeButtonContainer: document.querySelector('#likeButtonContainer'),
-            resto: {
+            LikeButtonInitiator.init({
+                likeButtonContainer: document.querySelector(
+                    '#likeButtonContainer'
+                ),
+                resto: {
+                    id: resto.id,
+                    name: resto.name,
+                    rating: resto.rating,
+                    city: resto.city,
+                    description: resto.description,
+                    pictureId: resto.pictureId
+                }
+            });
+
+            postReview.init({
                 id: resto.id,
-                name: resto.name,
-                rating: resto.rating,
-                city: resto.city,
-                description: resto.description,
-                pictureId: resto.pictureId
-            }
-        });
-
-        postReview.init({
-            id: resto.id,
-            btnSubmit: document.getElementById('btn-submit-review')
-        });
+                btnSubmit: document.getElementById('btn-submit-review')
+            });
+        } catch (error) {
+            alert(error);
+            console.error('Error:', error);
+        }
     }
 };
 

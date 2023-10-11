@@ -3,7 +3,6 @@ import API_ENDPOINT from '../global/api-endpoint';
 class RestoApiSource {
     static showLoader() {
         const ldRing = document.querySelectorAll('.lds-ring');
-        console.log(ldRing);
         ldRing.forEach((item) => {
             item.style.display = 'inline-block';
         });
@@ -15,13 +14,6 @@ class RestoApiSource {
             item.style.display = 'none';
         });
     }
-
-    // static async listResto() {
-    //     const response = await fetch(API_ENDPOINT.LIST_RESTO);
-    //     const responseJson = await response.json();
-    //     const listResto = responseJson.restaurants.splice(0, 12);
-    //     return listResto;
-    // }
 
     static async listResto() {
         return new Promise((resolve, reject) => {
@@ -42,7 +34,7 @@ class RestoApiSource {
                 }
 
                 resolve(listResto);
-            }, 2000); // Menunda respon selama 2 detik
+            }, 1000); // Menunda respon selama 1 detik
         });
     }
 
@@ -65,12 +57,8 @@ class RestoApiSource {
                 }
 
                 resolve(dataResto);
-            }, 2000); // Menunda respon selama 2 detik
+            }, 1000); // Menunda respon selama 1 detik
         });
-        // console.log(id);
-        // const response = await fetch(API_ENDPOINT.DETAIL_RESTO(id));
-        // const dataResto = await response.json();
-        // return dataResto.restaurant;
     }
 
     static async addReview(data) {

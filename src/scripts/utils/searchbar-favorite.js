@@ -1,6 +1,5 @@
 const searchBarFavorite = {
     init(searchBar) {
-        console.log(searchBar);
         this.searchCard(searchBar);
     },
 
@@ -15,7 +14,7 @@ const searchBarFavorite = {
     searchCard(searchBar) {
         const allTitle = this.getAllTitle();
         const allCity = this.getAllCity();
-        const cardResto = document.querySelectorAll('.card-info-resto');
+        const cardResto = document.querySelectorAll('card-resto');
         searchBar.addEventListener('input', (event) => {
             const value = event.target.value.toLowerCase();
             for (let index = 0; index < allCity.length; index++) {

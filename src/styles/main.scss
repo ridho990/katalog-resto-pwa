@@ -950,6 +950,9 @@ loader-ring {
             }
 
             & .ulasan-pengguna__wrapper-ulasan-form {
+                max-height: 20rem;
+                overflow-y: scroll;
+
                 & .ulasan-pengguna__wrapper-ulasan {
                     margin-top: 0.7rem;
 
@@ -988,6 +991,18 @@ loader-ring {
                         }
                     }
                 }
+            }
+
+            & .ulasan-pengguna__wrapper-ulasan-form::-webkit-scrollbar,
+            & .ulasan-pengguna__wrapper-ulasan-form::-webkit-scrollbar-thumb {
+                width: 26px;
+                border-radius: 13px;
+                background-clip: padding-box;
+                border: 10px solid transparent;
+            }
+
+            & .ulasan-pengguna__wrapper-ulasan-form::-webkit-scrollbar-thumb {
+                background-color: #c5c2c2 !important;
             }
 
             & .ulasan-pengguna__wrapper-form {

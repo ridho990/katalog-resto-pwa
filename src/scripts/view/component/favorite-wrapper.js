@@ -5,7 +5,7 @@ class FavoriteWrapper extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <section class="favorite padding-x-content padding-y-content">
+            <section id="skip-main-content" class="favorite padding-x-content padding-y-content">
 				<div class="favorite__wrapper">
 					<div class="wrapper__search-favorite flex-row">
 						<input

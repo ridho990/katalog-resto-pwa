@@ -23,7 +23,6 @@ class App {
         });
 
         HeaderInitiator.init(this._header);
-        // kita bisa menginisiasikan komponen lain bila ada
     }
 
     async renderPage() {
@@ -31,6 +30,15 @@ class App {
         const page = routes[url];
         this._content.innerHTML = await page.render();
         await page.afterRender();
+
+        const skipLink = document.querySelector('.skip-link');
+        const mainContent = document.querySelector('#skip-main-content');
+        skipLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(mainContent);
+            mainContent.scrollIntoView({ behavior: 'smooth' });
+            skipLink.blur();
+        });
     }
 }
 

@@ -44,7 +44,7 @@ class RestoApiSource {
                 }
 
                 resolve(listResto);
-            }, 1000); // Menunda respon selama 1 detik
+            }, 500); // Menunda respon selama 1 detik
         });
     }
 
@@ -75,7 +75,7 @@ class RestoApiSource {
                 }
 
                 resolve(dataResto);
-            }, 1000); // Menunda respon selama 1 detik
+            }, 500); // Menunda respon selama 1 detik
         });
     }
 

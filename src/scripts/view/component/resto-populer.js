@@ -6,7 +6,7 @@ class RestoPopuler extends HTMLElement {
     render() {
         this.innerHTML = `
             <section
-                id="resto-populer"
+                id="skip-main-content"
                 class="resto-populer padding-x-content padding-y-content"
             >
                 <div class="title-section">

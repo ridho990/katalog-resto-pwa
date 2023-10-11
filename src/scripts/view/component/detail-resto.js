@@ -4,7 +4,6 @@ class DetailResto extends HTMLElement {
     set setDetailResto(dataResto) {
         this._dataResto = dataResto;
         this.render();
-        // this.makeReview(this._dataResto.customerReviews);
     }
 
     makeList(menu, strOpsional) {
@@ -33,7 +32,7 @@ class DetailResto extends HTMLElement {
         const review = this._dataResto.customerReviews;
 
         this.innerHTML = `
-            <section class="section-detail-resto padding-x-content">
+            <section id="skip-main-content" class="section-detail-resto padding-x-content">
 				<div class="detail-resto">
 					<div class="detail-resto__img">
 						<img src="${image}" alt="Foto resto ${name}" />

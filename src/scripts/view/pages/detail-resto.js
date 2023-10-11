@@ -43,6 +43,13 @@ const DetailResto = {
                 id: resto.id,
                 btnSubmit: document.getElementById('btn-submit-review')
             });
+
+            DialogueError.init({
+                btnClose: document.getElementById('btn-close-x'),
+                btnYes: document.getElementById('yes-button'),
+                overlay: document.querySelector('.overlay-dialogue'),
+                wrapperDialogue: document.querySelector('.card-dialogue-eror')
+            });
         } catch (error) {
             alert(error);
             console.error('Error:', error);

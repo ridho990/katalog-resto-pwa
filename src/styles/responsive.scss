@@ -205,6 +205,10 @@
     #ulasan {
         width: 200px;
     }
+
+    .card-dialogue-eror {
+        width: 40%;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -316,6 +320,10 @@
         & h2 {
             margin-bottom: 1.3rem;
         }
+    }
+
+    .card-dialogue-eror {
+        width: 360px;
     }
 }
 

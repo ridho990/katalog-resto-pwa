@@ -9,6 +9,7 @@ import '../component/card-resto';
 import RestoApiSource from '../../data/resto-api';
 import BtnViewInitiator from '../../utils/btnview-initiator';
 import GaleriInitiator from '../../utils/galeri-initiator';
+import DialogueError from '../../utils/dialogue-error';
 
 const Home = {
     async render() {
@@ -55,6 +56,13 @@ const Home = {
                 galeriImg: galeriImg,
                 overlayTitle: overlayTitle,
                 dataResto: listResto
+            });
+
+            DialogueError.init({
+                btnClose: document.getElementById('btn-close-x'),
+                btnYes: document.getElementById('yes-button'),
+                overlay: document.querySelector('.overlay-dialogue'),
+                wrapperDialogue: document.querySelector('.card-dialogue-eror')
             });
         } catch (error) {
             alert(error);

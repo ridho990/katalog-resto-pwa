@@ -2,6 +2,8 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/responsive.scss';
 import App from './view/app';
+import swRegister from './utils/sw-register';
+import { async } from 'regenerator-runtime';
 
 const app = new App({
     btnOpen: document.querySelector('.btn-humburger'),
@@ -15,6 +17,7 @@ window.addEventListener('hashchange', () => {
     app.renderPage();
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     app.renderPage();
+    await swRegister();
 });

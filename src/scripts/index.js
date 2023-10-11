@@ -10,7 +10,7 @@ const app = new App({
     btnClose: document.querySelector('.btn-x-navbar'),
     drawer: document.querySelector('.header__navbar'),
     content: document.querySelector('#mainContent'),
-    header: document.querySelector('.header')
+    header: document.querySelector('.header'),
 });
 
 window.addEventListener('hashchange', () => {

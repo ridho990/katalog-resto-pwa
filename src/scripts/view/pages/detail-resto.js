@@ -28,7 +28,7 @@ const DetailResto = {
 
             LikeButtonInitiator.init({
                 likeButtonContainer: document.querySelector(
-                    '#likeButtonContainer'
+                    '#likeButtonContainer',
                 ),
                 resto: {
                     id: resto.id,
@@ -36,22 +36,22 @@ const DetailResto = {
                     rating: resto.rating,
                     city: resto.city,
                     description: resto.description,
-                    pictureId: resto.pictureId
-                }
+                    pictureId: resto.pictureId,
+                },
             });
 
             postReview.init({
                 id: resto.id,
-                btnSubmit: document.getElementById('btn-submit-review')
+                btnSubmit: document.getElementById('btn-submit-review'),
             });
         } catch (error) {
             DialogueError.showDialogueError({
                 overlay: document.querySelector('.overlay-dialogue'),
-                wrapperDialogue: document.querySelector('.card-dialogue-eror')
+                wrapperDialogue: document.querySelector('.card-dialogue-eror'),
             });
             console.error('Error:', error);
         }
-    }
+    },
 };
 
 export default DetailResto;

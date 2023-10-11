@@ -28,11 +28,11 @@ const Home = {
         try {
             const listResto = await RestoApiSource.listResto();
             const wrapperCard = document.querySelector(
-                '.resto-populer__wrapper-card'
+                '.resto-populer__wrapper-card',
             );
             const galeriImg = document.querySelectorAll('.galeri-resto__img');
             const overlayTitle = document.querySelectorAll(
-                '.overlay-img__nama-resto'
+                '.overlay-img__nama-resto',
             );
             const earlyTotalList = 3;
 
@@ -47,24 +47,24 @@ const Home = {
             BtnViewInitiator.init({
                 btnViewAll: document.querySelector('.resto-populer__btn-view'),
                 wrapperCard: document.querySelector(
-                    '.resto-populer__wrapper-card'
+                    '.resto-populer__wrapper-card',
                 ),
-                dataList: listResto
+                dataList: listResto,
             });
 
             GaleriInitiator.init({
                 galeriImg: galeriImg,
                 overlayTitle: overlayTitle,
-                dataResto: listResto
+                dataResto: listResto,
             });
         } catch (error) {
             DialogueError.showDialogueError({
                 overlay: document.querySelector('.overlay-dialogue'),
-                wrapperDialogue: document.querySelector('.card-dialogue-eror')
+                wrapperDialogue: document.querySelector('.card-dialogue-eror'),
             });
             console.error('Error:', error);
         }
-    }
+    },
 };
 
 export default Home;

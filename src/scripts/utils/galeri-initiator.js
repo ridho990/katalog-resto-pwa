@@ -13,7 +13,7 @@ const GaleriInitiator = {
                 overlayTitle[index].innerText = dataResto[index].name;
             }
         }
-    }
+    },
 };
 
 export default GaleriInitiator;

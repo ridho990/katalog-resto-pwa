@@ -25,7 +25,7 @@ class DetailResto extends HTMLElement {
 
         const categories = `${this.makeList(
             this._dataResto.categories,
-            ' Food'
+            ' Food',
         )}`;
         const address = `${this._dataResto.address}, ${this._dataResto.city}`;
         const drinkMenu = this.makeList(this._dataResto.menus.drinks, '');
@@ -98,7 +98,7 @@ class DetailResto extends HTMLElement {
                                                 </p>
                                             </div>
                                         </article>
-                                `
+                                `,
                                     )
                                     .join('')}
 							</div>

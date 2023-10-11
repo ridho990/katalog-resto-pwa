@@ -24,7 +24,7 @@ const searchBarFavorite = {
                 cardResto[index].classList.toggle('hidden', !isVisible);
             }
         });
-    }
+    },
 };
 
 export default searchBarFavorite;

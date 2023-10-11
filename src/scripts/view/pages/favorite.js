@@ -15,7 +15,7 @@ const Favorite = {
     async afterRender() {
         const favoriteResto = await FavoriteRestoIdb.getAllResto();
         const wrapperCardFavorite = document.querySelector(
-            '.wrapper-card-favorite'
+            '.wrapper-card-favorite',
         );
 
         favoriteResto.forEach((resto) => {
@@ -25,7 +25,7 @@ const Favorite = {
         });
 
         searchBarFavorite.init(document.getElementById('search-favorite'));
-    }
+    },
 };
 
 export default Favorite;

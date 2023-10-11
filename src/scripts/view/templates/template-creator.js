@@ -39,5 +39,5 @@ const createCardReview = (dataReview) => `
 export {
     createLikeButtonTemplate,
     createLikedButtonTemplate,
-    createCardReview
+    createCardReview,
 };

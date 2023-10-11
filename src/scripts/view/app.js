@@ -19,7 +19,7 @@ class App {
             btnOpen: this._btnOpen,
             btnClose: this._btnClose,
             drawer: this._drawer,
-            content: this._content
+            content: this._content,
         });
 
         HeaderInitiator.init(this._header);

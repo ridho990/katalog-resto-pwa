@@ -1,7 +1,7 @@
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
 import {
     createLikeButtonTemplate,
-    createLikedButtonTemplate
+    createLikedButtonTemplate,
 } from '../view/templates/template-creator';
 
 const LikeButtonInitiator = {
@@ -44,7 +44,7 @@ const LikeButtonInitiator = {
             await FavoriteRestoIdb.deleteResto(this._resto.id);
             this._renderButton();
         });
-    }
+    },
 };
 
 export default LikeButtonInitiator;

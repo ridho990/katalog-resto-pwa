@@ -34,7 +34,7 @@ const BtnViewInitiator = {
     _renderBtnViewLess(btnViewAll) {
         btnViewAll.textContent = 'Lebih Sedikit';
         btnViewAll.title = 'Klik untuk dapat melihat lebih sedikit';
-    }
+    },
 };
 
 export default BtnViewInitiator;

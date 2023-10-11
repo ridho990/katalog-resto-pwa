@@ -37,8 +37,8 @@ class RestoApiSource {
                         btnYes: document.getElementById('yes-button'),
                         overlay: document.querySelector('.overlay-dialogue'),
                         wrapperDialogue: document.querySelector(
-                            '.card-dialogue-eror'
-                        )
+                            '.card-dialogue-eror',
+                        ),
                     });
                     reject(new Error('Gagal mengambil data dari server'));
                 }
@@ -68,8 +68,8 @@ class RestoApiSource {
                         btnYes: document.getElementById('yes-button'),
                         overlay: document.querySelector('.overlay-dialogue'),
                         wrapperDialogue: document.querySelector(
-                            '.card-dialogue-eror'
-                        )
+                            '.card-dialogue-eror',
+                        ),
                     });
                     reject(new Error('Gagal mengambil data dari server'));
                 }
@@ -83,9 +83,9 @@ class RestoApiSource {
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         };
         const response = await fetch(API_ENDPOINT.ADD_REVIEW, options);
         const newListReview = await response.json();

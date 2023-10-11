@@ -23,7 +23,7 @@ const DialogueError = {
     showDialogueError({ overlay, wrapperDialogue }) {
         overlay.classList.remove('hidden');
         wrapperDialogue.classList.remove('hidden');
-    }
+    },
 };
 
 export default DialogueError;

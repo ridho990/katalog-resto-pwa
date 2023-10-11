@@ -25,7 +25,7 @@ const DrawerInitiator = {
         drawer.classList.remove('active-navbar');
         btnOpen.classList.remove('active-navbar');
         btnClose.classList.remove('active-navbar');
-    }
+    },
 };
 
 export default DrawerInitiator;

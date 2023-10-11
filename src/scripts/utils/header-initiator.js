@@ -7,7 +7,7 @@ const HeaderInitiator = {
                 header.classList.remove('bg-nav-active');
             }
         };
-    }
+    },
 };
 
 export default HeaderInitiator;

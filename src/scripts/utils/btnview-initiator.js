@@ -26,12 +26,12 @@ const BtnViewInitiator = {
         }
     },
 
-    _renderBtnViewMore(btnViewAll, btnActive) {
+    _renderBtnViewMore(btnViewAll) {
         btnViewAll.textContent = 'Lihat Semua';
         btnViewAll.title = 'Klik untuk dapat melihat semua';
     },
 
-    _renderBtnViewLess(btnViewAll, btnActive) {
+    _renderBtnViewLess(btnViewAll) {
         btnViewAll.textContent = 'Lebih Sedikit';
         btnViewAll.title = 'Klik untuk dapat melihat lebih sedikit';
     }

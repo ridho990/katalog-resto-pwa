@@ -13,17 +13,30 @@ const postReview = {
     async getDataForm(id) {
         const name = document.getElementById('input-username').value;
         const review = document.getElementById('input-review-resto').value;
-        const objReview = this.createObject(id, name, review);
+        const objReview = this.createObject({
+            _id: id,
+            _name: name,
+            _review: review
+        });
         const listReview = await RestoApiSource.addReview(objReview);
+        this.deleteValueForm({
+            formName: document.getElementById('input-username'),
+            formReview: document.getElementById('input-review-resto')
+        });
         return listReview;
     },
 
-    createObject(_id, _name, _review) {
+    createObject({ _id, _name, _review }) {
         return {
             id: _id,
             name: _name,
             review: _review
         };
+    },
+
+    deleteValueForm({ formName, formReview }) {
+        formName.value = '';
+        formReview.value = '';
     },
 
     async renderNewReview(id) {

@@ -7,10 +7,10 @@ class DetailResto extends HTMLElement {
         // this.makeReview(this._dataResto.customerReviews);
     }
 
-    makeListMenu(menu) {
+    makeList(menu, strOpsional) {
         let result = '';
         menu.forEach((item) => {
-            result += `${item.name}, `;
+            result += `${item.name}${strOpsional}, `;
         });
         return result.replace(/,(?=\s*$)/, '');
     }
@@ -23,10 +23,13 @@ class DetailResto extends HTMLElement {
         const colorTextReview = rating < 4 ? 'text-red' : 'text-blue';
         const textReview = rating < 4 ? 'Not Good' : 'Very Good';
 
-        const categories = `${this._dataResto.categories[0].name} Food dan ${this._dataResto.categories[1].name} Food`;
+        const categories = `${this.makeList(
+            this._dataResto.categories,
+            ' Food'
+        )}`;
         const address = `${this._dataResto.address}, ${this._dataResto.city}`;
-        const drinkMenu = this.makeListMenu(this._dataResto.menus.drinks);
-        const foodMenu = this.makeListMenu(this._dataResto.menus.foods);
+        const drinkMenu = this.makeList(this._dataResto.menus.drinks, '');
+        const foodMenu = this.makeList(this._dataResto.menus.foods, '');
         const review = this._dataResto.customerReviews;
 
         this.innerHTML = `

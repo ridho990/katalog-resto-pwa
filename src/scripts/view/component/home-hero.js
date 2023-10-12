@@ -49,7 +49,7 @@ class HomeHero extends HTMLElement {
                         </p>
                     </div>
                     <a
-                        href="#resto-populer"
+                        href="#skip-main-content"
                         class="hero__nav text-white"
                         aria-label="Navigasi ke section konten utama (rekomendasi resto)"
                         >Lihat Semua Restoran
